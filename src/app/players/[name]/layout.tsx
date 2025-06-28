@@ -11,7 +11,7 @@ export default function AboutUsLayout({
     <>
       {children}
         <div className="flex justify-center gap-8 text-lg">
-            <Link href="/players">Back to PLayers</Link>
+            <Link href="/players">Back to Players</Link>
         </div>
     </>
   );
