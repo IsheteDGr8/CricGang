@@ -5,9 +5,7 @@ export default function AboutUsContactUsLayout({
 }>) {
   return (
     <>
-      Header
       {children}
-      Footer
     </>
   );
 }
