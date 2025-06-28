@@ -1,4 +1,24 @@
 import React from 'react';
+import AnimatedPlayerStats from './playerstats';
+
+const PlayerPage = async ({ params }: { params: { name: string } }) => {
+  const res = await fetch('http://localhost:3000/api/players', { cache: 'no-store' });
+  const players = await res.json();
+
+  const player = players.find(
+    (p: any) => p.name.toLowerCase() === params.name.toLowerCase()
+  );
+
+  if (!player) return <div className="text-center mt-10 text-red-500">Player not found</div>;
+
+  return <AnimatedPlayerStats player={player} />;
+};
+
+export default PlayerPage;
+
+
+/*
+import React from 'react';
 
 const PlayerPage = async ({ params }: { params: { name: string } }) => {
   const res = await fetch('http://localhost:3000/api/players', { cache: 'no-store' });
@@ -43,7 +63,7 @@ const PlayerPage = async ({ params }: { params: { name: string } }) => {
 };
 
 export default PlayerPage;
-
+*/
 
 /* 
 import React from 'react';
