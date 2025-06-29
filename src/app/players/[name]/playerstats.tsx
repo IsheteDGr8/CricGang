@@ -15,7 +15,7 @@ const AnimatedPlayerStats = ({ player }: { player: any }) => {
           alt={`${player.name}'s Avatar`}
           className="w-24 h-24 rounded-full"
         />
-        <h2 className="text-3xl font-bold text-yellow-200">{player.name}'s Performance</h2>
+        <h2 className="text-3xl font-bold text-yellow-200">{player.name}'s Performance Last Game</h2>
       </div>
 
       <div className="grid grid-cols-2 gap-4 mt-8 text-lg">
