@@ -10,9 +10,11 @@ export default function AboutUsLayout({
   return (
     <>
       {children}
-        <div className="flex justify-center gap-8 text-lg">
-            <Link href="/players">Back to Players</Link>
-        </div>
+      <div className="grid place-items-center">
+        <Link href="/players" className="justify-center bg-white hover:bg-purple-700 hover:text-white font-semibold py-1 px-5 rounded-lg shadow text-center">
+          Back to All Players 
+        </Link>
+      </div>
     </>
   );
 }
