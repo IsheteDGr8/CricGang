@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const players = ['Ishaan', 'Shivek', 'Subodh'];
+const players = ['Ishaan', 'Shivek', 'Subodh', 'Vivek', 'Kaushik', 'Vishnu', 'Jaswant', 'Nikhil', 'Yash', 'Harsh M'];
 
 const PlayerList = () => {
   return (
@@ -12,7 +12,7 @@ const PlayerList = () => {
           <Link
             key={player}
             href={`/players/${player}`}
-            className="bg-yellow-100 border border-gray-300 rounded-lg p-4 shadow hover:shadow-lg text-center"
+            className="bg-yellow-200 border border-gray-300 rounded-lg p-4 shadow hover:bg-purple-300 hover:border-white-1000 text-center"
           >
             <img
               src={`https://api.dicebear.com/7.x/thumbs/svg?seed=${player}`} // placeholder avatar

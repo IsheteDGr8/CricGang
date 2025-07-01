@@ -1,10 +1,20 @@
 import { NextResponse } from 'next/server';
 
 const players = [
-  {name: 'Ishaan', overs: 4, wickets: 2, runs: 20, extras: 7, scored: 15},
-  {name: 'Shivek', overs: 4, wickets: 3, runs: 25, extras: 5, scored: 30}, 
-  {name: 'Subodh', overs: 4, wickets: 1, runs: 30, extras: 10, scored: 25},
+  {name: 'Ishaan', played: 0, overs: 0, wickets: 0, runs: 0, extras: 0, scored: 0},
+  {name: 'Shivek', played: 1, overs: 2.3, wickets: 2, runs: 11, extras: 1, scored: 19}, 
+  {name: 'Subodh', played: 0, overs: 0, wickets: 0, runs: 0, extras: 0, scored: 0},
+  {name: 'Jaswant', played: 1, overs: 3, wickets: 2, runs: 18, extras: 6, scored: 7},
+  {name: 'Vivek', played: 1, overs: 1, wickets: 0, runs: 11, extras: 3, scored: 42},
+  {name: 'Kaushik', played: 1, overs: 0, wickets: 0, runs: 0, extras: 0, scored: 7},
+  {name: 'Harsh M', played: 1, overs: 0, wickets: 0, runs: 0, extras: 0, scored: 0},
+  {name: 'Yash', played: 1, overs: 2, wickets: 0, runs: 7, extras: 3, scored: 10},
+  {name: 'Vishnu', played: 1, overs: 2, wickets: 1, runs: 8, extras: 1, scored: 0},
+  {name: 'Nikhil', played: 1, overs: 2, wickets: 3, runs: 6, extras: 3, scored: 10},
 ];
+
+
+// API 
 
 export async function GET() {
   try {

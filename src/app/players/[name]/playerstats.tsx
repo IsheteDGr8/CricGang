@@ -20,6 +20,7 @@ const AnimatedPlayerStats = ({ player }: { player: any }) => {
 
       <div className="grid grid-cols-2 gap-4 mt-8 text-lg">
         {Object.entries({
+          'Games Played': player.played,
           'Overs Bowled': player.overs,
           'Wickets': player.wickets,
           'Runs Given': player.runs,
