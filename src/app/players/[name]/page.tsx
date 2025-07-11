@@ -1,9 +1,8 @@
 import React from 'react';
 import AnimatedPlayerStats from './playerstats';
-import Link from 'next/link';
 
 const PlayerPage = async ({ params }: { params: { name: string } }) => {
-  const res = await fetch('http://localhost:3000/api/players', { cache: 'no-store' });
+  const res = await fetch('http://localhost:3000/api/players'); // too small to cache, not in MB
   const players = await res.json();
 
   const player = players.find(

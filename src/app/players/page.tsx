@@ -23,7 +23,7 @@ const PlayerList = () => {
           </Link>
         ))}
         <Link href="/" className="bg-white hover:bg-purple-700 hover:text-white font-semibold py-2 px-6 rounded-lg shadow col-span-full text-center"        >
-          Back to Home 
+          Back to Home
         </Link>
       </div>
     </div>
