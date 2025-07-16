@@ -44,17 +44,17 @@ export default function AddPlayerForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const customID = `${formData.name.trim().replace(/\s+/g, "-")}-${formData.played}`;
+    const customID = `${formData.Name.trim().replace(/\s+/g, "-")}-${formData.Played}`;
   
     const numericData = {
-      ...formData,
-      played: parseInt(formData.played),
-      overs: parseFloat(formData.overs),
-      wickets: parseInt(formData.wickets),
-      runs: parseInt(formData.runs),
-      extras: parseInt(formData.extras),
-      scored: parseInt(formData.scored),
-    }
+      name: formData.Name.trim(),
+      played: parseInt(formData.Played),
+      overs: parseFloat(formData.Overs),
+      wickets: parseInt(formData.Wickets),
+      runs: parseInt(formData.Runs),
+      extras: parseInt(formData.Extras),
+      scored: parseInt(formData.Scored),
+    };
 
     try {
       const playerRef = doc(db, "players", customID);
