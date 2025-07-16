@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const players = ['Ishaan', 'Shivek', 'Subodh', 'Vivek', 'Kaushik', 'Vishnu', 'Jaswant', 'Nikhil', 'Yash', 'Harsh M'];
+const players = ['Ishaan', 'Shivek', 'Subodh', 'Vivek', 'Kaushik', 'Vishnu', 'Jaswant', 'Nikhil', 'Yash', 'Harsh_M'];
 
 const PlayerList = () => {
   return (
