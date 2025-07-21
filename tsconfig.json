@@ -21,8 +21,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./*"]
+    },
+    "baseUrl": "src",
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/add/page.js", "src/lib/firebase.js"],
   "exclude": ["node_modules"]

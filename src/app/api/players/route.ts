@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
+import clientPromise from "@/lib/mongodb"; // Adjust the import path as necessary
 
+
+// Raw Data (for testing purposes)
 const players = [
   {name: 'Ishaan', played: 0, overs: 0, wickets: 0, runs: 0, extras: 0, scored: 0},
   {name: 'Shivek', played: 1, overs: 2.3, wickets: 2, runs: 11, extras: 1, scored: 19}, 
@@ -18,6 +21,10 @@ const players = [
 
 export async function GET() {
   try {
+    const client = await clientPromise;
+    const db = client.db('cricgang-db'); // Replace with your database name
+    const playersCollection = db.collection("players"); // Replace with your collection name
+    const players = await playersCollection.find({}).toArray();
     return NextResponse.json(players);
   } catch (error) {
     console.error('Error fetching players:', error);
@@ -28,12 +35,21 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
+    const player = await request.json();
+    const client = await clientPromise;
+    const db = client.db('cricgang-db'); // Replace with your database name
+    const playersCollection = db.collection("players"); // Replace with your collection name
+    const result = await playersCollection.insertOne(player);
+
+    /*
     const data = await request.json();
     console.log('Received data:', data);
-    return NextResponse.json({ message: 'Data received successfully', data });
+    */
+
+    return NextResponse.json({ message: 'Player added', id: result.insertedId });
   } catch (error) {
     console.error('Error processing POST request:', error);
-    return NextResponse.json({ error: 'Failed to process request' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to add player' }, { status: 500 });
   }
 }
 
